@@ -26,9 +26,9 @@ void setup(){
   
   float mod = random(10,30);  
   for (int i = 0; i < random(2,37); i++){
-      strokeWeight(random(0.25,1.3)*random(1,3));
+      strokeWeight(random(0.05,1.3)*random(1,4));
       bezier(0, random(height), x1, y1, x2, y2, random(width), random(height)); 
-      strokeWeight(random(0.25,1.3)*random(1,3));
+      strokeWeight(random(0.05,1.3)*random(1,4));
       bezier(0, random(height), x1+mod, y1+mod, x2+mod, y2+mod, random(width), random(height));
       mod = mod+i;
  }
