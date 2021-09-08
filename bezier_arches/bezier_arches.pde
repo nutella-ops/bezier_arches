@@ -26,11 +26,15 @@ void setup(){
   
   float mod = random(10,30); 
   float confine = random(1,3);
-  float[] strokeList = {0.07, 0.5, 2};
+  float[] strokeList = {1, 2, 3};
   
-  for (int i = 0; i < random(20,40); i++){
-      strokeWeight(random(0.05,1.3)*random(1,4));
+  for (int i = 0; i < random(44,66); i++){
+      strokeWeight(strokeList[2]);
       bezier(0, 0, x1, y1, x2, y2, width, 0); 
+      strokeWeight(strokeList[1]);
+      bezier(0, 0, x1+mod, y1+mod, x2+mod, y2+mod, width, 0);
+      mod = mod-i;
+      
       strokeWeight(strokeList[0]);
       bezier(0, width, x1+mod, y1+mod, x2+mod, y2+mod, width/2, height);
       mod = mod+i;
