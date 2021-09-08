@@ -26,7 +26,7 @@ void setup(){
   noFill();
   
   for (int i = 0; i < random(150); i++){
-  bezier(x1, y1, random(width), random(width), random(width), random(width), x2, y2);
+  bezier(0, height, random(width), random(width), random(width), random(width), width, height);
  }
  save("bezier-arches_sept-8_.png");
 }
