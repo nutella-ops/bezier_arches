@@ -18,10 +18,10 @@ void setup(){
     handle = width;
     }
 
-  float x1 = random(-width);
+  float x1 = random(width);
   float y1 = height;
   
-  float x2 = random(-width);
+  float x2 = random(width);
   float y2 = height;
   noFill();
   
