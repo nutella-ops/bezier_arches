@@ -27,9 +27,9 @@ void setup(){
   float mod = random(10,30);  
   for (int i = 0; i < random(2,37); i++){
       strokeWeight(random(0.05,1.3)*random(1,4));
-      bezier(0, random(height), x1, y1, x2, y2, random(width), random(height)); 
+      bezier(0, random(height/2), x1, y1, x2, y2, random(width), random(height/2)); 
       strokeWeight(random(0.05,1.3)*random(1,4));
-      bezier(0, random(height), x1+mod, y1+mod, x2+mod, y2+mod, random(width), random(height));
+      bezier(0, random(height/2), x1+mod, y1+mod, x2+mod, y2+mod, random(width), random(height/2));
       mod = mod+i;
  }
  save("bezier-arches_sept-8_.png");
