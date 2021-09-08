@@ -1,5 +1,5 @@
 void setup(){
-  size(600,1100);
+  size(1500,600);
   
   String project = "bezier-arches";
   int m = month();  // Values from 1 - 12
@@ -20,16 +20,17 @@ void setup(){
 
   float x1 = random(height);
   float y1 = random(height);
-  float x2 = random(-height);
+  float x2 = random(height);
   float y2 = random(height);
   noFill();
   
-  float mod = random(10,30);
-  for (int i = 0; i < random(100,247); i++){
-      bezier(0, 0, x1, y1, x2, y2, width, height);
-      bezier(0, 0, x1+mod, y1+mod, x2+mod, y2+mod, width, height);
+  float mod = random(10,30);  
+  for (int i = 0; i < random(2,37); i++){
+      strokeWeight(random(0.25,1.3)*random(1,3));
+      bezier(0, random(height), x1, y1, x2, y2, random(width), random(height)); 
+      strokeWeight(random(0.25,1.3)*random(1,3));
+      bezier(0, random(height), x1+mod, y1+mod, x2+mod, y2+mod, random(width), random(height));
       mod = mod+i;
-  
  }
  save("bezier-arches_sept-8_.png");
 }
