@@ -25,7 +25,7 @@ void setup(){
   float y2 = height;
   noFill();
   
-  for (int i = 0; i < random(50); i++){
+  for (int i = 0; i < random(150); i++){
   bezier(x1, y1, random(width), random(width), random(width), random(width), x2, y2);
  }
  save("bezier-arches_sept-8_.png");
