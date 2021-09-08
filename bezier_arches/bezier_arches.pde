@@ -25,7 +25,7 @@ void setup(){
   noFill();
   
   float mod = random(10,30); 
-  float confine = random(1,13);
+  float confine = random(1,3);
   
   for (int i = 0; i < random(2,37); i++){
       strokeWeight(random(0.05,1.3)*random(1,4));
