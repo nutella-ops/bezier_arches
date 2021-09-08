@@ -1,5 +1,5 @@
 void setup(){
-  size(600,1100);
+  size(1600,600);
   
   String project = "bezier-arches";
   int m = month();  // Values from 1 - 12
