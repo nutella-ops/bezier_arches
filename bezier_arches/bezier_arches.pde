@@ -1,43 +1,78 @@
+ import java.sql.Timestamp;
+ import java.text.SimpleDateFormat;
+ SimpleDateFormat dateFormat = new
+ SimpleDateFormat("MM-dd-yyyy");
+ 
+  void keyPressed(){
+   if (key == RETURN){
+     Timestamp timestamp = new
+     Timestamp(System.currentTimeMillis());
+       saveFrame("####-" + dateFormat.format(timestamp) + ".png");
+   }
+ }
+ 
+ int coin;
+  int toss(){
+  float seed = random(0,2.1);
+  if (seed <= 1){
+    return coin = 0;
+  } else {
+    return coin = 1;
+  }
+  }
+
 void setup(){
-  size(1100,600);
+  size(1400,600);
   
-  String project = "bezier-arches";
-  int s = second();
-    
   int handle;
     if (height >= width){
       handle = height;
     } else {
     handle = width;
     }
+  
 
-  float x1 = random(height);
-  float y1 = random(height);
-  float x2 = random(height);
-  float y2 = random(height);
+  
+  float tolerance = random(6,8);
+  float[] variation = {tolerance/100, tolerance/-100};
+  
+  int startX1 = 0;
+  int endY1 = height;
+  
+  int startX2 = width;
+  int endY2 = height;
+  
+  float x1 = random(handle);
+  float y1 = random(handle);
+  float x2 = random(handle);
+  float y2 = random(handle);
   noFill();
   
-  float mod = random(10,30); 
-  float confine = random(1,3);
-  float[] strokeList = {1, 2, 3};
-  float percent = width*(random(5,20)/100);
+  float mod = random(1,3); 
+  float[] strokeList = {0.3, 0.7, 1.3};
   
-  for (int i = 0; i < random(35,45); i++){
-      strokeWeight(strokeList[2]);
-      bezier(0, width/3-percent, x1, y1, x2, y2, width, height/3+percent); 
-      strokeWeight(strokeList[1]);
-      bezier(0, width/3-percent, x1+mod, y1+mod, x2+mod, y2+mod, width, height/3+percent);
-      mod = mod-i;
+   
+  for (int i = 0; i < random(2,4); i++){
+     
+
+      //strokeWeight(strokeList[2]);
+      //bezier(0, width/3-percent, x1+x1*variation[coin], y1+y1*variation[coin], x2+x2*variation[coin], y2+y2*variation[coin], width, height/3+percent); 
+      //strokeWeight(strokeList[1]);
+      //bezier(0, width/3-percent, x1+x1*variation[coin], y1+y1*variation[coin], x2+x2*variation[coin], y2+y2*variation[coin], width, height/3+percent);
+      //mod = mod-i;
       
       strokeWeight(strokeList[0]);
-      bezier(0, width+percent, x1+mod, y1+mod, x2+mod, y2+mod, width, height/3+height/3-percent);
+      bezier(startX1, endY1, x1+x1*variation[toss()]*mod, y1+y1*variation[toss()]*mod, x2+x2*variation[toss()]*mod, y2+y2*variation[toss()]*mod, startX2, endY2);
       mod = mod+i;
       strokeWeight(strokeList[1]);
-      bezier(0, width+percent, x1+mod, y1+mod, x2+mod, y2+mod, width, width/3+width/3-percent);
+      bezier(startX1, endY1, x1+x1*variation[toss()]*mod, y1+y1*variation[toss()]*mod, x2+x2*variation[toss()]*mod, y2+y2*variation[toss()]*mod, startX2, endY2);
       mod = mod+i;
       strokeWeight(strokeList[2]);
-      bezier(0, width/3+percent, x1+mod, y1+mod, x2+mod, y2+mod, width, width/3+width/3-percent);
+      bezier(startX1, endY1, x1+x1*variation[toss()]*mod, y1+y1*variation[toss()]*mod, x2+x2*variation[toss()]*mod, y2+y2*variation[toss()]*mod, startX2, endY2);
       mod = mod+i;
  }
- save("bezier-arches_sept-8_.png");
+ //save("bezier-arches_sept-9_.png");
+}
+
+void draw(){
 }
