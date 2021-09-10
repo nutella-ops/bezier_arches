@@ -57,14 +57,14 @@ void setup(){
       //mod = mod-i;
       
       strokeWeight(strokeList[0]);
-      bezier(startX1, endY1, x1+x1*variation[toss()]+mod, y1+y1*variation[toss()]+mod, x2+x2*variation[toss()]+mod, y2+y2*variation[toss()]+mod, startX2, endY2);
-      mod = mod+i*2;
+      bezier(startX1, endY1, x1+x1*variation[toss()]-mod, y1+y1*variation[toss()]-mod, x2+x2*variation[toss()]-mod, y2+y2*variation[toss()]-mod, startX2, endY2);
+      mod = mod+i;
       strokeWeight(strokeList[1]);
-      bezier(startX1, endY1, x1+x1*variation[toss()]+mod, y1+y1*variation[toss()]+mod, x2+x2*variation[toss()]+mod, y2+y2*variation[toss()]+mod, startX2, endY2);
-      mod = mod+i*4;
+      bezier(startX1, endY1, x1+x1*variation[toss()]-mod, y1+y1*variation[toss()]-mod, x2+x2*variation[toss()]-mod, y2+y2*variation[toss()]-mod, startX2, endY2);
+      mod = mod+i;
       strokeWeight(strokeList[2]);
-      bezier(startX1, endY1, x1+x1*variation[toss()]+mod, y1+y1*variation[toss()]+mod, x2+x2*variation[toss()]+mod, y2+y2*variation[toss()]+mod, startX2, endY2);
-      mod = mod+i*6;
+      bezier(startX1, endY1, x1+x1*variation[toss()]-mod, y1+y1*variation[toss()]-mod, x2+x2*variation[toss()]-mod, y2+y2*variation[toss()]-mod, startX2, endY2);
+      mod = mod+i;
  }
  save("bezier-arches_" + dateFormat.format(timestamp) +".png");
 }
